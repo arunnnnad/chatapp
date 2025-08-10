@@ -1,0 +1,236 @@
+:root {
+    --primary-color: #4e73df;
+    --secondary-color: #e3e6f0;
+    --text-color: #333;
+    --light-text: #666;
+    --bg-color: #f8f9fc;
+    --message-sent: #e3f1fc;
+    --message-received: #f1f1f1;
+    --active-color: #2e59d9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 500px;
+    height: 90vh;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.name {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.header-options i {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-message {
+    text-align: center;
+    margin: 20px 0;
+    color: var(--light-text);
+}
+
+.message {
+    max-width: 80%;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 18px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.sent {
+    background-color: var(--message-sent);
+    color: var(--text-color);
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+}
+
+.received {
+    background-color: var(--message-received);
+    color: var(--text-color);
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+.message .sender {
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.message .time {
+    font-size: 0.7rem;
+    color: var(--light-text);
+    position: absolute;
+    bottom: -18px;
+    right: 5px;
+}
+
+.chat-input-container {
+    padding: 15px;
+    background-color: white;
+    border-top: 1px solid var(--secondary-color);
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-color);
+    border-radius: 20px;
+    padding: 0 10px;
+    margin-right: 10px;
+    flex-grow: 1;
+}
+
+.attachment-btn, .emoji-btn {
+    background: none;
+    border: none;
+    color: var(--light-text);
+    cursor: pointer;
+    padding: 10px;
+}
+
+#message-input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 0.9rem;
+    flex-grow: 1;
+}
+
+.send-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-btn:hover {
+    background-color: var(--active-color);
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: black;
+}
+
+#username-input {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    outline: none;
+}
+#username-submit {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+#username-submit:hover {
+    background-color: var(--active-color);
+}
